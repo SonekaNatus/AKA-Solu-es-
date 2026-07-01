@@ -25,32 +25,26 @@
 }
 
 /* Logo */
-.logo {
+.logo-img-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--text-dark-primary);
-  font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
 }
 
-.logo-icon {
-  color: var(--accent-purple);
+.logo-img {
+  height: 110px;
+  width: auto;
+  display: block;
   transition: transform var(--transition-normal);
 }
 
-.logo:hover .logo-icon {
-  transform: rotate(15deg) scale(1.1);
-  color: var(--secondary);
+.logo-img-mobile {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
-.logo-highlight {
-  background: linear-gradient(135deg, var(--accent-purple) 0%, var(--secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.logo-img-wrapper:hover .logo-img {
+  transform: scale(1.03);
 }
 
 /* Menu Desktop */
@@ -84,7 +78,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  background: var(--accent-purple);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform var(--transition-normal);

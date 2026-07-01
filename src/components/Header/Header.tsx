@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Rocket } from "lucide-react";
+import { Menu, X, } from "lucide-react";
 import { Button } from "../UI/Button";
 import "./Header.css";
 
@@ -31,11 +31,8 @@ export const Header: React.FC = () => {
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="container-wide header-container">
-        <a href="#inicio" className="logo" onClick={closeMenu}>
-          <Rocket className="logo-icon" size={28} />
-          <span className="logo-text">
-            AKA <span className="logo-highlight">Soluções</span>
-          </span>
+        <a href="#inicio" className="logo-img-wrapper" onClick={closeMenu}>
+          <img src="/logo.png" alt="AKA Soluções Logo" className="logo-img" />
         </a>
 
         {/* Menu Desktop */}
@@ -63,9 +60,8 @@ export const Header: React.FC = () => {
         <div className={`nav-mobile-overlay ${isOpen ? "active" : ""}`} onClick={closeMenu}></div>
         <nav className={`nav-mobile ${isOpen ? "active" : ""}`}>
           <div className="nav-mobile-header">
-            <a href="#inicio" className="logo" onClick={closeMenu}>
-              <Rocket className="logo-icon" size={24} />
-              <span className="logo-text">AKA <span className="logo-highlight">Soluções</span></span>
+            <a href="#inicio" className="logo-img-wrapper" onClick={closeMenu}>
+              <img src="/logo.png" alt="AKA Soluções Logo" className="logo-img-mobile" />
             </a>
             <button className="mobile-menu-close" onClick={closeMenu} aria-label="Fechar menu">
               <X size={24} />

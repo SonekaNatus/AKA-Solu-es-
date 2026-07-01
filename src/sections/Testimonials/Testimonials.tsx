@@ -45,8 +45,7 @@ export const Testimonials: React.FC = () => {
 
   return (
     <section id="depoimentos" className="section testimonials-section">
-      <div className="glow-bg testimonials-glow" style={{ top: "30%", left: "15%", width: "400px", height: "400px", background: "var(--primary)", opacity: 0.05 }}></div>
-
+      
       <div className="container-wide">
         <div className="section-header-center">
           <span className="section-subtitle-badge">Clientes Satisfeitos</span>

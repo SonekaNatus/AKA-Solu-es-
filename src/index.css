@@ -8,8 +8,8 @@
      ========================================================================== */
 
   /* Fundos */
-  --bg-dark-deep: #ffffff;     /* Branco puro */
-  --bg-dark-card: #f8fafc;     /* Slate 50 (Cinza-azulado ultra leve para cards) */
+  --bg-dark-deep: #f8fafc;     /* Slate 50 (Cinza bem clarinho de fundo para o site) */
+  --bg-dark-card: #ffffff;     /* Branco puro para dar diferença das boxes */
   --bg-dark-light: #f1f5f9;    /* Slate 100 */
 
   --bg-light-pure: #ffffff;
@@ -132,35 +132,22 @@ button, input, textarea, select {
 }
 
 .text-gradient {
-  background: linear-gradient(
-    135deg,
-    #09090b 20%,
-    #3f3f46 55%,
-    var(--primary) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
 }
 
 .text-gradient-purple {
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--accent-purple)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--secondary);
 }
 .glass {
   background: rgba(255,255,255,.72);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(91,61,245,.08);
+  border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 .glass-light {
   background: rgba(255,255,255,.90);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(0,0,0,.05);
+  border: 1px solid rgba(15, 23, 42, 0.05);
 }
 /* Animações Úteis */
 @keyframes float {

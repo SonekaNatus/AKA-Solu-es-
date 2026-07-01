@@ -39,7 +39,6 @@ export const FAQ: React.FC = () => {
 
   return (
     <section id="faq" className="section faq-section">
-      <div className="glow-bg faq-glow" style={{ top: "50%", left: "5%", width: "400px", height: "400px", background: "var(--primary)", opacity: 0.05 }}></div>
       
       <div className="container-wide">
         <div className="section-header-center">

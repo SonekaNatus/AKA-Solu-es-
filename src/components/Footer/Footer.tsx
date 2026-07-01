@@ -9,11 +9,8 @@ export const Footer: React.FC = () => {
     <footer className="footer">
       <div className="container-wide footer-container">
         <div className="footer-brand">
-          <a href="#inicio" className="logo">
-            <Rocket className="logo-icon" size={24} />
-            <span className="logo-text">
-              AKA <span className="logo-highlight">Soluções</span>
-            </span>
+          <a href="#inicio" className="logo-img-wrapper">
+            <img src="/logo.png" alt="AKA Soluções Logo" className="logo-img-footer" />
           </a>
           <p className="footer-description">
             Criamos landing pages de alto impacto e performance para transformar visitantes em clientes fiéis.
