@@ -1,5 +1,5 @@
 import React from "react";
-import { Rocket, Mail } from "lucide-react";
+import {Mail } from "lucide-react";
 import "./Footer.css";
 
 export const Footer: React.FC = () => {
