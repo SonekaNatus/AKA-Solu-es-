@@ -59,7 +59,7 @@ export const Testimonials: React.FC = () => {
 
         <div className="testimonials-grid">
           {testimonials.map((test) => (
-            <div key={test.id} className="testimonial-card">
+            <div key={test.id} className="card testimonial-card">
               <div className="testimonial-header">
                 <div className="stars-row">
                   {[...Array(test.rating)].map((_, i) => (

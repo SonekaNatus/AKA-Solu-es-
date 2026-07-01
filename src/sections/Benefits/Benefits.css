@@ -15,22 +15,11 @@
 }
 
 .benefit-card {
-  background: var(--bg-dark-card);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--border-radius-md);
   padding: 40px 30px;
-  transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-}
-
-.benefit-card:hover {
-  transform: translateY(-5px);
-  background: var(--bg-light-pure);
-  border-color: var(--accent-purple);
-  box-shadow: var(--shadow-md), 0 0 25px rgba(99, 102, 241, 0.05);
 }
 
 /* Ícone */

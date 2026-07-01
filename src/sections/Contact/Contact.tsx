@@ -80,7 +80,7 @@ export const Contact: React.FC = () => {
             </p>
 
             <div className="contact-info-list">
-              <a href="mailto:contato@akasolucoes.com.br" className="info-card">
+              <a href="mailto:contato@akasolucoes.com.br" className="card info-card">
                 <div className="info-card-icon">
                   <Mail size={24} />
                 </div>
@@ -90,7 +90,7 @@ export const Contact: React.FC = () => {
                 </div>
               </a>
 
-              <div className="info-card">
+              <div className="card info-card">
                 <div className="info-card-icon">
                   <Clock size={24} />
                 </div>
@@ -113,7 +113,7 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Formulário de Contato */}
-          <div className="contact-form-panel">
+          <div className="card contact-form-panel">
             {status === "success" ? (
               <div className="form-status-box success">
                 <CheckCircle size={48} className="status-icon-success" />

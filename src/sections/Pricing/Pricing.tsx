@@ -102,7 +102,7 @@ export const Pricing: React.FC = () => {
 
         <div className="pricing-grid">
           {plans.map((plan, index) => (
-            <div key={index} className={`pricing-card ${plan.popular ? "popular" : ""}`}>
+            <div key={index} className={`card pricing-card ${plan.popular ? "popular" : ""}`}>
               {plan.popular && <span className="popular-badge">Mais Escolhido</span>}
               
               <div className="pricing-plan-header">

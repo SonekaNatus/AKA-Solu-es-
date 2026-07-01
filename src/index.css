@@ -8,9 +8,10 @@
      ========================================================================== */
 
   /* Fundos */
-  --bg-dark-deep: #f8fafc;     /* Slate 50 (Cinza bem clarinho de fundo para o site) */
-  --bg-dark-card: #ffffff;     /* Branco puro para dar diferença das boxes */
-  --bg-dark-light: #f1f5f9;    /* Slate 100 */
+  --bg-dark-deep: #e2e8f0;   /* Fundo do site */
+  --bg-dark-card: #ffffff;   /* Boxes */
+  --bg-dark-light: #cbd5e1;  /* Detalhes */
+  --bg-card-hover: #cbd5e1;  /* Hover das boxes */
 
   --bg-light-pure: #ffffff;
   --bg-light-soft: #f8fafc;
@@ -52,10 +53,9 @@
   --border-radius-xl: 34px;
 
   /* Sombras */
-  --shadow-sm: 0 4px 12px rgba(0,0,0,.05);
-  --shadow-md: 0 12px 32px rgba(0,0,0,.08);
-  --shadow-lg: 0 24px 48px rgba(0,0,0,.12);
-
+  --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 8px 28px rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.16);
   /* Glow extremamente discreto */
   --shadow-neon: 0 0 28px rgba(91,61,245,.12);
 
@@ -242,4 +242,23 @@ button, input, textarea, select {
   .section-description {
     font-size: 15px;
   }
+}
+
+/* ========================================================================== 
+   CARD GLOBAL
+   ========================================================================== */
+
+.card {
+  background: var(--bg-dark-card);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background: var(--bg-card-hover);
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-lg);
 }

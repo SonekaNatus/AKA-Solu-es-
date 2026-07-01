@@ -44,16 +44,10 @@
   align-items: center;
   gap: 16px;
   padding: 20px;
-  background: var(--bg-dark-card);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--border-radius-md);
-  transition: all var(--transition-normal);
 }
 
 .info-card:hover {
-  border-color: var(--accent-purple);
   transform: translateX(5px);
-  box-shadow: var(--shadow-sm);
 }
 
 .info-card-icon {
@@ -124,8 +118,6 @@
 
 /* Painel do Formulário */
 .contact-form-panel {
-  background: var(--bg-dark-card);
-  border: 1px solid var(--gray-200);
   border-radius: var(--border-radius-lg);
   padding: 40px;
   display: flex;

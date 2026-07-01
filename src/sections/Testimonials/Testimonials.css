@@ -13,22 +13,12 @@
 }
 
 .testimonial-card {
-  background: var(--bg-dark-card);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--border-radius-md);
   padding: 40px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
-  transition: all var(--transition-normal);
   position: relative;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-purple);
-  box-shadow: var(--shadow-lg);
 }
 
 .testimonial-header {

@@ -14,24 +14,24 @@
 }
 
 .faq-item {
-  background: var(--bg-dark-card);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--border-radius-md);
   padding: 24px 30px;
   cursor: pointer;
   text-align: left;
-  transition: all var(--transition-normal);
 }
 
 .faq-item:hover {
-  border-color: var(--accent-purple);
-  background: var(--bg-dark-light);
+  transform: none;
 }
 
 .faq-item.open {
   border-color: var(--primary);
   background: var(--bg-dark-card);
   box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+}
+
+.faq-item.open:hover {
+  transform: none;
+  background: var(--bg-dark-card);
 }
 
 .faq-question-row {

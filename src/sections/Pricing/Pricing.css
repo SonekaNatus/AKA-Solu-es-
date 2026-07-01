@@ -14,28 +14,21 @@
 }
 
 .pricing-card {
-  background: var(--bg-dark-card);
   border: 1px solid rgba(124, 58, 237, 0.08);
   border-radius: var(--border-radius-lg);
   padding: 45px 35px;
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: all var(--transition-normal);
-}
-
-.pricing-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-purple);
-  box-shadow: var(--shadow-lg);
 }
 
 /* Card Destacado (Popular) */
 .pricing-card.popular {
   background: var(--bg-light-pure);
   border: 2px solid var(--primary);
-  box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
-  transform: scale(1.03);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 20px rgba(99, 102, 241, 0.08);
 }
 
 .pricing-card.popular:hover {

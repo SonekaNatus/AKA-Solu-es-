@@ -58,7 +58,7 @@ export const Benefits: React.FC = () => {
 
         <div className="benefits-grid">
           {benefitsData.map((benefit, index) => (
-            <div key={index} className="benefit-card">
+            <div key={index} className="card benefit-card">
               <div className="benefit-icon-wrapper">
                 {benefit.icon}
               </div>

@@ -48,19 +48,9 @@
 }
 
 .portfolio-card {
-  background: var(--bg-dark-card);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--border-radius-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all var(--transition-normal);
-}
-
-.portfolio-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent-purple);
-  box-shadow: var(--shadow-lg);
 }
 
 /* Preview Area */

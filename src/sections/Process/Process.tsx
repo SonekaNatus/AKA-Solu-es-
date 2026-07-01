@@ -57,7 +57,7 @@ export const Process: React.FC = () => {
 
           <div className="process-grid">
             {steps.map((step, index) => (
-              <div key={index} className="process-card">
+              <div key={index} className="card process-card">
                 <div className="process-header-card">
                   <span className="process-number">{step.number}</span>
                   <div className="process-icon">{step.icon}</div>

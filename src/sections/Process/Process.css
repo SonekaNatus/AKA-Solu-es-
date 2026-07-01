@@ -31,22 +31,11 @@
 }
 
 .process-card {
-  background: var(--bg-dark-card);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--border-radius-md);
   padding: 35px 25px;
   text-align: left;
-  transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
   position: relative;
-}
-
-.process-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-purple);
-  box-shadow: var(--shadow-md), 0 0 20px rgba(99, 102, 241, 0.05);
-  background: var(--bg-light-pure);
 }
 
 .process-header-card {

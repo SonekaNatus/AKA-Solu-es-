@@ -57,7 +57,7 @@ export const FAQ: React.FC = () => {
             return (
               <div 
                 key={index} 
-                className={`faq-item ${isOpen ? "open" : ""}`}
+                className={`card faq-item ${isOpen ? "open" : ""}`}
                 onClick={() => toggleAccordion(index)}
               >
                 <div className="faq-question-row">

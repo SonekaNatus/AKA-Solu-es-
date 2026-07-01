@@ -12,8 +12,8 @@ interface PortfolioItem {
   category: "vendas" | "leads" | "saas" | "institucional";
   categoryLabel: string;
   description: string;
-  gradient: string; // Fundo simulado premium caso não tenha imagem
-  imagePath?: string; // Se tiver uma imagem real, insira o caminho aqui (ex: '/assets/projeto1.jpg')
+  color: string;
+  imagePath?: string;
   link: string;
 }
 
@@ -24,7 +24,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "leads",
     categoryLabel: "Captura de Leads",
     description: "Landing Page de agendamento focada no público de alta renda, com design minimalista e formulário integrado.",
-    gradient: "linear-gradient(135deg, #4f46e5 0%, #070b19 100%)",
+    color: "#4f46e5",
     link: "#contato",
   },
   {
@@ -33,7 +33,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "vendas",
     categoryLabel: "Página de Vendas",
     description: "LP de alta conversão estruturada com copywriting persuasivo, quebra de objeções e checkout integrado.",
-    gradient: "linear-gradient(135deg, #7c3aed 0%, #db2777 100%)",
+    color: "#7c3aed",
     link: "#contato",
   },
   {
@@ -42,7 +42,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "saas",
     categoryLabel: "SaaS / Aplicativo",
     description: "Apresentação moderna de software corporativo com ilustrações interativas, planos e testes gratuitos.",
-    gradient: "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)",
+    color: "#06b6d4",
     link: "#contato",
   },
   {
@@ -51,7 +51,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "leads",
     categoryLabel: "Captura de Leads",
     description: "Estética sobriedade com foco em conversão rápida via WhatsApp para captação de clientes jurídicos.",
-    gradient: "linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)",
+    color: "#1e1b4b",
     link: "#contato",
   },
   {
@@ -60,7 +60,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "vendas",
     categoryLabel: "Página de Vendas",
     description: "Design moderno com foco em autoridade, depoimentos em carrossel e call to action para compra imediata.",
-    gradient: "linear-gradient(135deg, #b91c1c 0%, #1e1b4b 100%)",
+    color: "#b91c1c",
     link: "#contato",
   },
   {
@@ -69,7 +69,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: "saas",
     categoryLabel: "SaaS / Aplicativo",
     description: "Landing page para download de app fitness com integração para App Store e Google Play.",
-    gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+    color: "#10b981",
     link: "#contato",
   },
 ];
@@ -118,10 +118,10 @@ export const Portfolio: React.FC = () => {
         {/* Grid de Itens do Portfólio */}
         <div className="portfolio-grid">
           {filteredItems.map((item) => (
-            <div key={item.id} className="portfolio-card">
+            <div key={item.id} className="card portfolio-card">
               <div 
                 className="portfolio-preview-wrapper"
-                style={{ background: item.imagePath ? "none" : item.gradient }}
+                style={{ background: item.imagePath ? "none" : item.color }}
               >
                 {item.imagePath ? (
                   <img src={item.imagePath} alt={item.title} className="portfolio-image" />
