@@ -1,0 +1,114 @@
+.testimonials-section {
+  position: relative;
+  background-color: var(--bg-dark-deep);
+  z-index: 2;
+  border-top: 1px solid rgba(124, 58, 237, 0.05);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.testimonial-card {
+  background: var(--bg-dark-card);
+  border: 1px solid rgba(124, 58, 237, 0.08);
+  border-radius: var(--border-radius-md);
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(124, 58, 237, 0.25);
+  box-shadow: var(--shadow-lg);
+}
+
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.stars-row {
+  display: flex;
+  gap: 4px;
+}
+
+.star-icon {
+  color: #fbbf24; /* Cor dourada brilhante para as estrelas */
+}
+
+.quote-icon {
+  color: rgba(124, 58, 237, 0.2);
+}
+
+.testimonial-content {
+  font-size: 15px;
+  color: var(--text-dark-muted);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+/* Rodapé do card */
+.testimonial-footer-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar-initials {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+  color: var(--text-dark-primary);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.2);
+  flex-shrink: 0;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark-primary);
+}
+
+.user-role-company {
+  font-size: 13px;
+  color: var(--text-dark-muted);
+}
+
+.user-company {
+  color: var(--accent-purple);
+  font-weight: 500;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 500px;
+    margin: 40px auto 0;
+  }
+}
