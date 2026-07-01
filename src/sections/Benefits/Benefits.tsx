@@ -43,7 +43,7 @@ export const Benefits: React.FC = () => {
   ];
 
   return (
-    <section id="beneficios" className="benefits-section">
+    <section id="beneficios" className="section benefits-section">
       <div className="container-wide">
         <div className="section-header-center">
           <span className="section-subtitle-badge">Por que nos escolher</span>

@@ -58,7 +58,7 @@ export const Contact: React.FC = () => {
   )}`;
 
   return (
-    <section id="contato" className="contact-section">
+    <section id="contato" className="section contact-section">
       <div className="glow-bg contact-glow" style={{ bottom: "5%", right: "15%", width: "400px", height: "400px", background: "var(--primary)", opacity: 0.08 }}></div>
 
       <div className="container-wide">

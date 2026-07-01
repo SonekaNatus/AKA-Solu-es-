@@ -28,12 +28,12 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(124, 58, 237, 0.12);
-  border: 1px solid rgba(167, 139, 250, 0.25);
-  color: var(--accent-purple);
+  background: var(--bg-dark-light);
+  border: 1px solid var(--gray-200);
+  color: var(--text-dark-primary);
   padding: 8px 16px;
   border-radius: 100px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   margin-bottom: 24px;
   letter-spacing: 0.2px;
@@ -105,9 +105,9 @@
   height: 380px;
   background: var(--bg-dark-card);
   border-radius: var(--border-radius-md);
-  border: 1px solid rgba(124, 58, 237, 0.2);
-  box-shadow: 0 30px 60px -15px rgba(12, 4, 32, 0.8),
-              0 0 50px -10px rgba(124, 58, 237, 0.25);
+  border: 1px solid var(--gray-200);
+  box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.08),
+              0 0 50px -10px rgba(99, 102, 241, 0.05);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -121,8 +121,8 @@
 
 .browser-header {
   height: 40px;
-  background: rgba(8, 2, 20, 0.5);
-  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+  background: var(--bg-dark-light);
+  border-bottom: 1px solid var(--gray-200);
   display: flex;
   align-items: center;
   padding: 0 16px;
@@ -147,7 +147,8 @@
 
 .browser-address {
   flex-grow: 1;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-dark-deep);
+  border: 1px solid var(--gray-200);
   border-radius: 4px;
   font-size: 11px;
   color: var(--text-dark-muted);
@@ -163,7 +164,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background: linear-gradient(180deg, var(--bg-dark-card) 0%, rgba(20, 10, 48, 0.4) 100%);
+  background: var(--bg-dark-card);
 }
 
 .mock-hero {
@@ -185,21 +186,21 @@
 .mock-title {
   width: 80%;
   height: 14px;
-  background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.3));
+  background: linear-gradient(90deg, var(--primary), var(--gray-200));
   border-radius: 3px;
 }
 
 .mock-text {
   width: 50%;
   height: 8px;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--gray-200);
   border-radius: 2px;
 }
 
 .mock-button {
   width: 90px;
   height: 20px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  background: var(--primary);
   border-radius: 4px;
   margin-top: 6px;
 }
@@ -212,8 +213,8 @@
 }
 
 .mock-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(124, 58, 237, 0.08);
+  background: var(--bg-dark-deep);
+  border: 1px solid var(--gray-200);
   border-radius: 6px;
   padding: 12px 8px;
   display: flex;
@@ -225,21 +226,21 @@
 .mock-card-icon {
   width: 16px;
   height: 16px;
-  background: rgba(124, 58, 237, 0.2);
+  background: rgba(99, 102, 241, 0.1);
   border-radius: 50%;
 }
 
 .mock-card-title {
   width: 70%;
   height: 6px;
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--gray-300);
   border-radius: 1px;
 }
 
 .mock-card-text {
   width: 90%;
   height: 4px;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--gray-200);
   border-radius: 1px;
 }
 
@@ -252,12 +253,22 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 120px 16px 60px;
+    padding: 100px 16px 50px;
+  }
+  
+  .hero-title {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+  
+  .hero-subtitle {
+    font-size: 15px;
+    margin-bottom: 30px;
   }
   
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
   }
   
   .hero-content {
@@ -273,6 +284,7 @@
   .hero-actions {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
   }
   
   .hero-features {

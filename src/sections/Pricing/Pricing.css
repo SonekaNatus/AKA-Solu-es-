@@ -26,22 +26,22 @@
 
 .pricing-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(124, 58, 237, 0.2);
+  border-color: var(--accent-purple);
   box-shadow: var(--shadow-lg);
 }
 
 /* Card Destacado (Popular) */
 .pricing-card.popular {
-  background: rgba(18, 8, 43, 0.65);
+  background: var(--bg-light-pure);
   border: 2px solid var(--primary);
-  box-shadow: 0 15px 45px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
   transform: scale(1.03);
 }
 
 .pricing-card.popular:hover {
   transform: translateY(-5px) scale(1.04);
-  box-shadow: 0 20px 50px rgba(124, 58, 237, 0.25),
-              0 0 30px rgba(124, 58, 237, 0.2);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12),
+              0 0 30px rgba(99, 102, 241, 0.05);
 }
 
 .popular-badge {
@@ -49,21 +49,21 @@
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  background: var(--primary);
   color: #fff;
   padding: 6px 16px;
   font-family: var(--font-heading);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   border-radius: 100px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
 }
 
 /* Cabeçalho do Plano */
 .pricing-plan-header {
-  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+  border-bottom: 1px solid var(--gray-200);
   padding-bottom: 30px;
   margin-bottom: 30px;
   text-align: left;
@@ -98,7 +98,7 @@
 }
 
 .pricing-card.popular .plan-price {
-  background: linear-gradient(135deg, #fff 0%, var(--accent-purple) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -140,11 +140,13 @@
 
 /* Recursos desabilitados no plano básico */
 .plan-feature-item.disabled {
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--text-dark-muted);
+  opacity: 0.35;
 }
 
 .plan-feature-item.disabled .feature-check {
-  color: rgba(255, 255, 255, 0.15);
+  color: var(--text-dark-muted);
+  opacity: 0.2;
 }
 
 /* Ação */

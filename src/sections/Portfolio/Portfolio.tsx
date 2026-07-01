@@ -89,7 +89,7 @@ export const Portfolio: React.FC = () => {
   ];
 
   return (
-    <section id="portfolio" className="portfolio-section">
+    <section id="portfolio" className="section portfolio-section">
       <div className="glow-bg portfolio-glow" style={{ top: "40%", right: "10%", width: "400px", height: "400px", background: "var(--primary)", opacity: 0.1 }}></div>
       
       <div className="container-wide">

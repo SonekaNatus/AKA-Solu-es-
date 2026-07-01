@@ -87,7 +87,7 @@ export const Pricing: React.FC = () => {
   ];
 
   return (
-    <section id="planos" className="pricing-section">
+    <section id="planos" className="section pricing-section">
       <div className="glow-bg pricing-glow-1" style={{ top: "10%", right: "20%", width: "400px", height: "400px", background: "var(--primary)", opacity: 0.08 }}></div>
       <div className="glow-bg pricing-glow-2" style={{ bottom: "10%", left: "10%", width: "400px", height: "400px", background: "var(--secondary)", opacity: 0.05 }}></div>
 

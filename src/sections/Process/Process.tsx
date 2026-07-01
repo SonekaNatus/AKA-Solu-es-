@@ -38,7 +38,7 @@ export const Process: React.FC = () => {
   ];
 
   return (
-    <section id="processo" className="process-section">
+    <section id="metodo" className="section process-section">
       <div className="glow-bg process-glow" style={{ bottom: "10%", left: "5%", width: "350px", height: "350px", background: "var(--secondary)", opacity: 0.08 }}></div>
 
       <div className="container-wide">
