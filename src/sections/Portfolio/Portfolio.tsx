@@ -1,3 +1,4 @@
+import emagreca from "../../assets/emagreca.png";
 import React, { useEffect, useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, Layers } from "lucide-react";
 import "./Portfolio.css";
@@ -33,20 +34,23 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     color: "#4f46e5",
     link: "#contato",
   },
-  {
-    id: 2,
-    title: "Método Emagreça com Saúde",
-    category: "vendas",
-    categoryLabel: "Página de Vendas",
-    description: "LP de infoproduto com copy persuasivo e checkout integrado.",
-    problem: "Tráfego pago caro e baixa taxa de conversão na página antiga.",
-    solution: "Nova estrutura de vendas com quebra de objeções e CTA estratégico.",
-    result: "Mais vendas com o mesmo investimento em anúncios.",
-    metricBefore: "2,8% conversão",
-    metricAfter: "7,4% conversão",
-    color: "#7c3aed",
-    link: "#contato",
-  },
+
+ {
+  id: 2,
+  title: "Método Emagreça com Saúde",
+  category: "vendas",
+  categoryLabel: "Página de Vendas",
+  description: "LP de infoproduto com copy persuasivo e checkout integrado.",
+  problem: "Tráfego pago caro e baixa taxa de conversão na página antiga.",
+  solution: "Nova estrutura de vendas com quebra de objeções e CTA estratégico.",
+  result: "Mais vendas com o mesmo investimento em anúncios.",
+  metricBefore: "2,8% conversão",
+  metricAfter: "7,4% conversão",
+  color: "#7c3aed",
+  imagePath: emagreca,
+  link: "https://emagre-a-com-sa-de.vercel.app/"
+},
+
   {
     id: 3,
     title: "SaaS Workspace",
