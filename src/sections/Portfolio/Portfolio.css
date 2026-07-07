@@ -2,7 +2,6 @@
   position: relative;
   background-color: var(--bg-dark-deep);
   z-index: 2;
-  border-top: 1px solid rgba(124, 58, 237, 0.05);
 }
 
 /* Filtros */
@@ -12,7 +11,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .filter-btn {

@@ -2,13 +2,12 @@
   position: relative;
   background-color: var(--bg-dark-deep);
   z-index: 2;
-  border-top: 1px solid rgba(124, 58, 237, 0.05);
 }
 
 .process-timeline {
   position: relative;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 32px;
 }
 
 /* Linha horizontal atrás dos cards (só aparece em desktop) */

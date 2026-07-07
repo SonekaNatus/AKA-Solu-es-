@@ -2,7 +2,6 @@
   position: relative;
   background-color: var(--bg-dark-deep);
   z-index: 2;
-  border-top: 1px solid rgba(124, 58, 237, 0.05);
 }
 
 .pricing-grid {
@@ -10,7 +9,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   align-items: stretch;
-  margin-top: 50px;
+  margin-top: 32px;
 }
 
 .pricing-card {
