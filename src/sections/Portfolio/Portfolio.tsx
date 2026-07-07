@@ -1,6 +1,7 @@
-import emagreca from "../../assets/emagreca.png";
 import React, { useEffect, useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, Layers } from "lucide-react";
+import emagreca from "../../assets/emagreca.png";
+import advocaciaSilva from "../../assets/advogaciaSilva.png";
 import "./Portfolio.css";
 
 interface PortfolioItem {
@@ -37,7 +38,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
 
  {
   id: 2,
-  title: "Método Emagreça com Saúde",
+  title: "Métodos de Emagrecimento",
   category: "vendas",
   categoryLabel: "Página de Vendas",
   description: "LP de infoproduto com copy persuasivo e checkout integrado.",
@@ -66,19 +67,20 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     link: "#contato",
   },
   {
-    id: 4,
-    title: "Advocacia Silva",
-    category: "leads",
-    categoryLabel: "Captura de Leads",
-    description: "Captação jurídica com foco em WhatsApp.",
-    problem: "Site institucional não convertia visitantes em consultas.",
-    solution: "LP objetiva com CTA direto para atendimento imediato.",
-    result: "Mais consultas agendadas por semana.",
-    metricBefore: "8 consultas/mês",
-    metricAfter: "27 consultas/mês",
-    color: "#1e1b4b",
-    link: "#contato",
-  },
+  id: 4,
+  title: "Advocacia Silva",
+  category: "leads",
+  categoryLabel: "Captura de Leads",
+  description: "Landing page para escritório de advocacia com foco em geração de contatos via WhatsApp.",
+  problem: "Site institucional não convertia visitantes em consultas.",
+  solution: "Criação de uma landing page moderna com CTA estratégico, formulário e integração com WhatsApp.",
+  result: "Melhor experiência para o usuário e maior potencial de conversão.",
+  metricBefore: "8 consultas/mês",
+  metricAfter: "27 consultas/mês",
+  color: "#1e1b4b",
+  imagePath: advocaciaSilva,
+  link: "https://advogacia-silva.vercel.app/"
+},
   {
     id: 5,
     title: "Investidor de Sucesso",
@@ -151,10 +153,13 @@ export const Portfolio: React.FC = () => {
     setActiveSlide((prev) => (prev === filteredItems.length - 1 ? 0 : prev + 1));
   };
 
-  const slideStyle = useMemo(
-    () => ({ background: currentItem?.imagePath ? "none" : currentItem?.color || "#111827" }),
-    [currentItem]
-  );
+  const slideStyle = useMemo(() => {
+    if (!currentItem) return {};
+    if (currentItem.imagePath) {
+      return { background: currentItem.id === 4 ? "#0a0a0a" : "#1a2e24" };
+    }
+    return { background: currentItem.color || "#111827" };
+  }, [currentItem]);
 
   return (
     <section id="portfolio" className="section portfolio-section">
@@ -198,9 +203,14 @@ export const Portfolio: React.FC = () => {
           )}
 
           {currentItem && (
-            <div className="portfolio-stage" style={slideStyle}>
+            <div
+              className={`portfolio-stage ${currentItem.imagePath ? "portfolio-stage--with-image" : ""}`}
+              style={slideStyle}
+            >
               {currentItem.imagePath ? (
-                <img src={currentItem.imagePath} alt={currentItem.title} className="portfolio-image" />
+                <div className="portfolio-image-wrap">
+                  <img src={currentItem.imagePath} alt={currentItem.title} className="portfolio-image" />
+                </div>
               ) : (
                 <div className="portfolio-simulated-preview portfolio-simulated-full">
                   <Layers className="simulated-icon" size={64} />
