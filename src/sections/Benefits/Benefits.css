@@ -58,12 +58,42 @@
   line-height: 1.6;
 }
 
+.benefits-trust {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 24px;
+}
+
+.trust-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trust-item strong {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  color: var(--primary);
+}
+
+.trust-item span {
+  font-size: 13px;
+  color: var(--text-dark-muted);
+}
+
 /* Responsivo */
 @media (max-width: 992px) {
   .benefits-grid {
     grid-template-columns: 1fr;
     gap: 20px;
     max-width: 620px;
+  }
+
+  .benefits-trust {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

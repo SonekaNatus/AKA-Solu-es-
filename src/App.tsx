@@ -9,6 +9,7 @@ import { Testimonials } from "./sections/Testimonials/Testimonials";
 import { FAQ } from "./sections/FAQ/FAQ";
 import { Contact } from "./sections/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
+import { WhatsAppFloat } from "./components/WhatsAppFloat/WhatsAppFloat";
 
 function App() {
   return (
@@ -48,6 +49,8 @@ function App() {
 
       {/* Rodapé do Site */}
       <Footer />
+
+      <WhatsAppFloat />
     </div>
   );
 }

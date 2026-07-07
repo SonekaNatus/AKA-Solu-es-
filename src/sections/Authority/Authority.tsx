@@ -2,10 +2,10 @@ import React from "react";
 import "./Authority.css";
 
 const STATS = [
-  { value: "7+", label: "Anos de experiencia" },
-  { value: "1.200+", label: "Empresas atendidas" },
-  { value: "5.000+", label: "Paginas entregues" },
-  { value: "40.000+", label: "Criativos produzidos" },
+  { value: "+50", label: "Landing pages entregues" },
+  { value: "+20", label: "Empresas atendidas" },
+  { value: "5.0", label: "Avaliação média" },
+  { value: "2h", label: "Tempo de resposta" },
 ];
 
 export const Authority: React.FC = () => {

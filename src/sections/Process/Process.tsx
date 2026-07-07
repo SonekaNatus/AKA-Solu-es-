@@ -1,5 +1,5 @@
 import React from "react";
-import { MessageSquare, Eye, Code, Globe } from "lucide-react";
+import { MessageSquare, Lightbulb, PenTool, Eye, Rocket, TrendingUp } from "lucide-react";
 import "./Process.css";
 
 interface ProcessStep {
@@ -14,47 +14,55 @@ export const Process: React.FC = () => {
     {
       number: "01",
       icon: <MessageSquare size={24} />,
-      title: "Briefing & Planejamento",
-      description: "Entendemos seu produto, público-alvo e concorrentes para criar a estratégia ideal de copywriting e estrutura de conversão.",
+      title: "Conversamos",
+      description: "Entendemos seu negócio, público e meta de vendas para montar a estratégia certa.",
     },
     {
       number: "02",
-      icon: <Eye size={24} />,
-      title: "Design Visual Exclusivo",
-      description: "Criamos a interface sob medida para sua aprovação, focando na identidade visual da sua marca e em uma experiência do usuário premium.",
+      icon: <Lightbulb size={24} />,
+      title: "Criamos a estratégia",
+      description: "Definimos oferta, copy, estrutura da página e plano de anúncios para conversão.",
     },
     {
       number: "03",
-      icon: <Code size={24} />,
-      title: "Desenvolvimento React",
-      description: "Escrevemos o código em React com alta performance, garantindo que sua página carregue de forma instantânea e sem travamentos.",
+      icon: <PenTool size={24} />,
+      title: "Desenvolvemos",
+      description: "Criamos landing page e criativos com foco em resultado, não em tecnologia.",
     },
     {
       number: "04",
-      icon: <Globe size={24} />,
-      title: "Integrações & Lançamento",
-      description: "Conectamos formulários de email, instalamos pixels de rastreamento e colocamos sua landing page no ar pronta para gerar vendas.",
+      icon: <Eye size={24} />,
+      title: "Revisamos",
+      description: "Você aprova cada etapa com ajustes rápidos até ficar do jeito ideal.",
+    },
+    {
+      number: "05",
+      icon: <Rocket size={24} />,
+      title: "Publicamos",
+      description: "Colocamos tudo no ar pronto para captar leads, vendas e agendamentos.",
+    },
+    {
+      number: "06",
+      icon: <TrendingUp size={24} />,
+      title: "Escalamos com anúncios",
+      description: "Otimizamos campanhas para aumentar retorno e reduzir custo por lead.",
     },
   ];
 
   return (
-    <section id="metodo" className="section process-section">
-      
+    <section id="processo" className="section process-section">
       <div className="container-wide">
         <div className="section-header-center">
-          <span className="section-subtitle-badge">Nossa Metodologia</span>
+          <span className="section-subtitle-badge">Como Funciona</span>
           <h2 className="section-title text-dark-primary">
-            Como Criamos Sua <span className="text-gradient-purple">Página de Sucesso</span>
+            Do primeiro contato ao <span className="text-gradient-purple">resultado</span>
           </h2>
           <p className="section-description">
-            Um processo direto e transparente dividido em quatro etapas simples para levar seu negócio ao próximo nível.
+            Processo simples, transparente e focado em colocar sua operação para vender o quanto antes.
           </p>
         </div>
 
         <div className="process-timeline">
-          {/* Linha de conexão */}
-          <div className="timeline-line"></div>
-
           <div className="process-grid">
             {steps.map((step, index) => (
               <div key={index} className="card process-card">

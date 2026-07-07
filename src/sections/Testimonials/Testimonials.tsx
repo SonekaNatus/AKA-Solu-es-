@@ -7,6 +7,9 @@ interface Testimonial {
   name: string;
   role: string;
   company: string;
+  city: string;
+  niche: string;
+  result: string;
   content: string;
   rating: number;
   initials: string;
@@ -17,9 +20,13 @@ export const Testimonials: React.FC = () => {
     {
       id: 1,
       name: "Roberto Santos",
-      role: "Infoprodutor & CMO",
+      role: "Infoprodutor",
       company: "Finanças do Amanhã",
-      content: "A landing page desenvolvida pela AKA Soluções superou todas as nossas expectativas. Nossa taxa de conversão nas campanhas de tráfego pago pulou de 2.8% para 7.4% logo na primeira semana de lançamento. O design exclusivo fez toda a diferença!",
+      city: "São Paulo, SP",
+      niche: "Educação Financeira",
+      result: "Conversão subiu de 2,8% para 7,4%",
+      content:
+        "A landing page mudou nosso jogo nas campanhas. Em poucos dias já vimos mais vendas com o mesmo investimento em anúncios.",
       rating: 5,
       initials: "RS",
     },
@@ -28,7 +35,11 @@ export const Testimonials: React.FC = () => {
       name: "Camila Braga",
       role: "Diretora Clínica",
       company: "Sorriso Clean Odonto",
-      content: "Precisávamos de uma página profissional focada em conversão para captar pacientes no Google Ads. Com a landing page no ar, o número de agendamentos diretos no WhatsApp aumentou em 40%. O suporte pós-entrega é excelente!",
+      city: "Curitiba, PR",
+      niche: "Odontologia",
+      result: "+40% em agendamentos via WhatsApp",
+      content:
+        "Antes dependíamos muito de indicação. Hoje recebemos agendamentos todos os dias vindos da página e dos anúncios.",
       rating: 5,
       initials: "CB",
     },
@@ -37,7 +48,11 @@ export const Testimonials: React.FC = () => {
       name: "Lucas Farias",
       role: "Fundador",
       company: "TaskUp SaaS",
-      content: "Equipe extremamente capacitada. O desenvolvimento em React com código super limpo permitiu que o nosso time integrasse a página ao nosso sistema sem nenhuma complicação. O carregamento é instantâneo!",
+      city: "Florianópolis, SC",
+      niche: "Software B2B",
+      result: "Leads mensais mais que dobraram",
+      content:
+        "A equipe entregou página, criativos e tráfego alinhados. O resultado foi mais leads qualificados e previsibilidade nas campanhas.",
       rating: 5,
       initials: "LF",
     },
@@ -45,15 +60,14 @@ export const Testimonials: React.FC = () => {
 
   return (
     <section id="depoimentos" className="section testimonials-section">
-      
       <div className="container-wide">
         <div className="section-header-center">
-          <span className="section-subtitle-badge">Clientes Satisfeitos</span>
+          <span className="section-subtitle-badge">Depoimentos</span>
           <h2 className="section-title text-dark-primary">
-            Quem Confia na <span className="text-gradient-purple">AKA Soluções</span>
+            Resultados reais de <span className="text-gradient-purple">clientes reais</span>
           </h2>
           <p className="section-description">
-            Veja o impacto real que nossas landing pages geram no faturamento e captação de clientes de nossos parceiros.
+            Empresários de diferentes nichos que aumentaram leads, vendas e agendamentos com nossa estratégia completa.
           </p>
         </div>
 
@@ -68,8 +82,10 @@ export const Testimonials: React.FC = () => {
                 </div>
                 <Quote size={28} className="quote-icon" />
               </div>
-              
+
               <p className="testimonial-content">"{test.content}"</p>
+
+              <div className="testimonial-result">{test.result}</div>
 
               <div className="testimonial-footer-info">
                 <div className="avatar-initials">{test.initials}</div>
@@ -77,6 +93,9 @@ export const Testimonials: React.FC = () => {
                   <h4 className="user-name">{test.name}</h4>
                   <p className="user-role-company">
                     {test.role} • <span className="user-company">{test.company}</span>
+                  </p>
+                  <p className="user-meta">
+                    {test.city} • {test.niche}
                   </p>
                 </div>
               </div>

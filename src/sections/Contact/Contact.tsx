@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Mail, Send, CheckCircle, AlertTriangle, Clock } from "lucide-react";
+import { Mail, Send, CheckCircle, AlertTriangle, Clock, MessageCircle } from "lucide-react";
 import { Button } from "../../components/UI/Button";
 import "./Contact.css";
+
+const WHATSAPP_NUMBER = "5511999999999";
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "Landing Page Essencial",
+    subject: "Landing Page",
     message: "",
   });
 
@@ -21,8 +23,7 @@ export const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validação simples
+
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("error");
       setErrorMessage("Por favor, preencha todos os campos obrigatórios.");
@@ -31,55 +32,52 @@ export const Contact: React.FC = () => {
 
     setStatus("sending");
 
-    // Simulando o envio de e-mail assíncrono (ex: para Formspree, EmailJS ou backend)
     setTimeout(() => {
-      try {
-        // Simulação de sucesso
-        console.log("Dados do formulário enviados:", formData);
-        setStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          subject: "Landing Page Essencial",
-          message: "",
-        });
-      } catch (err) {
-        setStatus("error");
-        setErrorMessage("Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.");
-      }
+      setStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "Landing Page",
+        message: "",
+      });
     }, 1800);
   };
 
-  // Gerador de link mailto direto para conveniência
-  const mailtoLink = `mailto:contato@akasolucoes.com.br?subject=${encodeURIComponent(
-    `Orçamento: ${formData.subject || "Landing Page"}`
-  )}&body=${encodeURIComponent(
-    `Olá AKA Soluções,\n\nMeu nome é ${formData.name}.\n\nDetalhes do Projeto:\n${formData.message}\n\nContato direto: ${formData.email}`
+  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    `Olá! Meu nome é ${formData.name || "[seu nome]"}. Quero receber minha proposta para: ${formData.subject}.`
   )}`;
 
   return (
     <section id="contato" className="section contact-section">
-      
       <div className="container-wide">
         <div className="section-header-center">
           <span className="section-subtitle-badge">Iniciar Projeto</span>
           <h2 className="section-title text-dark-primary">
-            Solicite um <span className="text-gradient-purple">Orçamento Grátis</span>
+            Receba sua <span className="text-gradient-purple">proposta personalizada</span>
           </h2>
           <p className="section-description">
-            Preencha o formulário abaixo ou envie um e-mail diretamente. Retornaremos com sua proposta em até 24 horas úteis.
+            Preencha o formulário ou fale direto no WhatsApp. Retornamos em até 2 horas úteis.
           </p>
         </div>
 
         <div className="contact-grid">
-          {/* Informações laterais de contato */}
           <div className="contact-info-panel">
-            <h3 className="info-panel-title">Contato Oficial</h3>
+            <h3 className="info-panel-title">Fale com a gente agora</h3>
             <p className="info-panel-desc">
-              Estamos prontos para analisar o seu projeto e planejar a melhor estratégia de vendas para o seu negócio.
+              Sua empresa perde clientes sem presença digital profissional. Vamos montar sua estratégia para gerar mais vendas.
             </p>
 
             <div className="contact-info-list">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="card info-card info-card-whatsapp">
+                <div className="info-card-icon">
+                  <MessageCircle size={24} />
+                </div>
+                <div className="info-card-content">
+                  <span className="info-card-label">WhatsApp (principal)</span>
+                  <span className="info-card-value">Conversar agora</span>
+                </div>
+              </a>
+
               <a href="mailto:contato@akasolucoes.com.br" className="card info-card">
                 <div className="info-card-icon">
                   <Mail size={24} />
@@ -96,30 +94,19 @@ export const Contact: React.FC = () => {
                 </div>
                 <div className="info-card-content">
                   <span className="info-card-label">Tempo de Resposta</span>
-                  <span className="info-card-value">Em até 24h úteis</span>
+                  <span className="info-card-value">Em até 2 horas úteis</span>
                 </div>
               </div>
             </div>
-
-            <div className="mailto-helper-box">
-              <h4 className="helper-title">Prefere enviar direto pelo seu e-mail?</h4>
-              <p className="helper-desc">
-                Clique no botão abaixo para abrir seu aplicativo de e-mail (Outlook, Gmail, etc.) com os dados pré-preenchidos.
-              </p>
-              <Button href={mailtoLink} variant="outline" className="mailto-btn">
-                Enviar E-mail Direto
-              </Button>
-            </div>
           </div>
 
-          {/* Formulário de Contato */}
           <div className="card contact-form-panel">
             {status === "success" ? (
               <div className="form-status-box success">
                 <CheckCircle size={48} className="status-icon-success" />
                 <h3 className="status-title">Mensagem Enviada!</h3>
                 <p className="status-desc">
-                  Recebemos seu e-mail de orçamento. Nossa equipe de especialistas vai analisar seus dados e entrará em contato em até 24 horas úteis. Obrigado!
+                  Recebemos seu pedido. Nossa equipe entrará em contato em até 2 horas úteis com sua proposta.
                 </p>
                 <Button onClick={() => setStatus("idle")} variant="light">
                   Enviar Nova Mensagem
@@ -165,7 +152,7 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="subject">Plano de Interesse / Objetivo</label>
+                  <label htmlFor="subject">Plano de Interesse</label>
                   <select
                     id="subject"
                     name="subject"
@@ -173,10 +160,10 @@ export const Contact: React.FC = () => {
                     onChange={handleChange}
                     disabled={status === "sending"}
                   >
-                    <option value="Landing Page Essencial">Landing Page Essencial (R$ 997)</option>
-                    <option value="Landing Page Premium">Landing Page Premium (R$ 1.597)</option>
-                    <option value="Landing Page Personalizada">Landing Page Personalizada (Sob Demanda)</option>
-                    <option value="Outro Serviço / Parcerias">Outro Serviço / Dúvidas</option>
+                    <option value="Landing Page">Landing Page</option>
+                    <option value="Landing + Criativos">Landing + Criativos</option>
+                    <option value="Gestão de Tráfego">Gestão de Tráfego</option>
+                    <option value="Quero uma recomendação">Quero uma recomendação</option>
                   </select>
                 </div>
 
@@ -187,28 +174,23 @@ export const Contact: React.FC = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Nos diga o que você vende, qual o seu objetivo com a página de vendas e se já tem um domínio..."
+                    placeholder="O que você vende, qual resultado quer alcançar e se já anuncia hoje..."
                     rows={6}
                     required
                     disabled={status === "sending"}
                   ></textarea>
                 </div>
 
-                <Button
-                  type="submit"
-                  variant="primary"
-                  className="submit-btn"
-                  disabled={status === "sending"}
-                >
+                <Button type="submit" variant="primary" className="submit-btn" disabled={status === "sending"}>
                   {status === "sending" ? (
                     <>
                       <div className="form-spinner"></div>
-                      <span>Enviando orçamento...</span>
+                      <span>Enviando proposta...</span>
                     </>
                   ) : (
                     <>
                       <Send size={18} />
-                      <span>Solicitar Orçamento por E-mail</span>
+                      <span>Quero receber minha proposta</span>
                     </>
                   )}
                 </Button>

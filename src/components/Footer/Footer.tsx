@@ -1,6 +1,8 @@
 import React from "react";
-import {Mail } from "lucide-react";
+import { Mail, MessageCircle, Share2, Globe } from "lucide-react";
 import "./Footer.css";
+
+const WHATSAPP_NUMBER = "5511999999999";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -13,8 +15,19 @@ export const Footer: React.FC = () => {
             <img src="/logo.png" alt="AKA Soluções Logo" className="logo-img-footer" />
           </a>
           <p className="footer-description">
-            Criamos landing pages de alto impacto e performance para transformar visitantes em clientes fiéis.
+            Transformamos cliques em clientes com landing pages, criativos e tráfego pago focados em conversão.
           </p>
+          <div className="footer-socials">
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <MessageCircle size={18} />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <Share2 size={18} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Globe size={18} />
+            </a>
+          </div>
         </div>
 
         <div className="footer-links-group">
@@ -41,14 +54,18 @@ export const Footer: React.FC = () => {
             <h4 className="footer-title">Contato Oficial</h4>
             <ul className="footer-list contact-list">
               <li>
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}`} className="footer-contact-item" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle size={16} />
+                  <span>WhatsApp</span>
+                </a>
+              </li>
+              <li>
                 <a href="mailto:contato@akasolucoes.com.br" className="footer-contact-item">
                   <Mail size={16} />
                   <span>contato@akasolucoes.com.br</span>
                 </a>
               </li>
-              <li className="footer-time">
-                Segunda a Sexta, das 9h às 18h
-              </li>
+              <li className="footer-time">Segunda a Sexta, das 9h às 18h</li>
             </ul>
           </div>
         </div>
@@ -62,7 +79,9 @@ export const Footer: React.FC = () => {
           <div className="footer-bottom-links">
             <a href="#faq">Termos de Uso</a>
             <span className="separator">•</span>
-            <a href="#faq">Políticas de Privacidade</a>
+            <a href="#faq">Política de Privacidade</a>
+            <span className="separator">•</span>
+            <a href="#faq">LGPD</a>
           </div>
         </div>
       </div>

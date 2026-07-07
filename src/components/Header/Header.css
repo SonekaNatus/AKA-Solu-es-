@@ -31,14 +31,14 @@
 }
 
 .logo-img {
-  height: 54px;
+  height: 78px;
   width: auto;
   display: block;
   transition: transform var(--transition-normal);
 }
 
 .logo-img-mobile {
-  height: 34px;
+  height: 44px;
   width: auto;
   display: block;
 }

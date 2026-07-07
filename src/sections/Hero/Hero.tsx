@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, ChevronRight, Zap, Trophy, ShieldCheck } from "lucide-react";
+import { ArrowRight, Star, Users, Briefcase, TrendingUp } from "lucide-react";
 import { Button } from "../../components/UI/Button";
 import "./Hero.css";
 
@@ -9,54 +9,57 @@ export const Hero: React.FC = () => {
       <div className="container-wide hero-container">
         <div className="hero-content">
           <div className="hero-badge">
-            <Zap size={14} className="hero-badge-icon" />
-            <span>Proposta personalizada em ate 2 horas</span>
+            <Star size={14} className="hero-badge-icon" fill="currentColor" />
+            <span>Proposta personalizada em até 2 horas</span>
           </div>
-          
+
           <h1 className="hero-title text-gradient">
-            Landing Page + Criativos + Trafego:{" "}
-            <span className="text-gradient-purple">tudo para vender mais</span>
+            Transformamos cliques em clientes com{" "}
+            <span className="text-gradient-purple">Landing Page + Criativos + Tráfego Pago</span>
           </h1>
-          
+
           <p className="hero-subtitle">
-            Entregamos o pacote completo para sua empresa escalar vendas sem depender de varios fornecedores. Tudo pronto para rodar, com foco real em conversao.
+            Você recebe tudo pronto para rodar: página persuasiva, criativos profissionais e gestão de anúncios.
+            Sem depender de 3 fornecedores diferentes. Foco total em gerar leads, vendas e agendamentos.
           </p>
 
           <div className="hero-actions">
             <Button href="#contato" variant="primary">
-              Quero o Combo Completo <ArrowRight size={18} />
+              Quero vender mais <ArrowRight size={18} />
             </Button>
-            <Button href="#portfolio" variant="outline">
-              Ver Projetos Reais <ChevronRight size={18} />
+            <Button href="https://wa.me/5511999999999" variant="outline" target="_blank">
+              Conversar no WhatsApp
             </Button>
           </div>
 
-          <p className="hero-microcopy">Sem compromisso - diagnostico estrategico gratuito</p>
+          <p className="hero-microcopy">Sem compromisso • Diagnóstico estratégico gratuito</p>
 
-          <div className="hero-features">
-            <div className="hero-feat-item">
-              <Zap className="feat-icon" size={20} />
-              <span>Pagina persuasiva com copy de conversao</span>
+          <div className="hero-social-proof">
+            <div className="hero-proof-item">
+              <Briefcase size={18} />
+              <span><strong>+50</strong> landing pages</span>
             </div>
-            <div className="hero-feat-item">
-              <Trophy className="feat-icon" size={20} />
-              <span>7 criativos prontos para anuncio</span>
+            <div className="hero-proof-item">
+              <Users size={18} />
+              <span><strong>+20</strong> empresas atendidas</span>
             </div>
-            <div className="hero-feat-item">
-              <ShieldCheck className="feat-icon" size={20} />
-              <span>Gestao de trafego em Meta e Google Ads</span>
+            <div className="hero-proof-item">
+              <Star size={18} fill="currentColor" />
+              <span><strong>5.0</strong> avaliação média</span>
+            </div>
+            <div className="hero-proof-item">
+              <TrendingUp size={18} />
+              <span><strong>+220%</strong> média de leads</span>
             </div>
           </div>
         </div>
 
         <div className="hero-visual">
-          {/* Mockup de Navegador Interativo feito em CSS */}
           <div className="browser-mockup animate-float">
             <div className="browser-header">
               <div className="browser-address">akasolucoes.com.br/sua-landing-page</div>
             </div>
             <div className="browser-content">
-              {/* Representação visual interna de uma landing page */}
               <div className="mock-hero">
                 <div className="mock-logo"></div>
                 <div className="mock-title"></div>
