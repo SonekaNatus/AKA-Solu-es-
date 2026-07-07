@@ -10,39 +10,41 @@ export const Hero: React.FC = () => {
         <div className="hero-content">
           <div className="hero-badge">
             <Zap size={14} className="hero-badge-icon" />
-            <span>Foco total em vendas e conversão</span>
+            <span>Proposta personalizada em ate 2 horas</span>
           </div>
           
           <h1 className="hero-title text-gradient">
-            Landing Pages Premium que <br />
-            <span className="text-gradient-purple">Vendem por Você</span> 24h
+            Landing Page + Criativos + Trafego:{" "}
+            <span className="text-gradient-purple">tudo para vender mais</span>
           </h1>
           
           <p className="hero-subtitle">
-            Desenvolvemos páginas de vendas de altíssima conversão, com velocidade extrema, design exclusivo e estrutura sob medida para o seu negócio faturar mais.
+            Entregamos o pacote completo para sua empresa escalar vendas sem depender de varios fornecedores. Tudo pronto para rodar, com foco real em conversao.
           </p>
 
           <div className="hero-actions">
             <Button href="#contato" variant="primary">
-              Começar Meu Projeto <ArrowRight size={18} />
+              Quero o Combo Completo <ArrowRight size={18} />
             </Button>
             <Button href="#portfolio" variant="outline">
-              Ver Landing Pages <ChevronRight size={18} />
+              Ver Projetos Reais <ChevronRight size={18} />
             </Button>
           </div>
+
+          <p className="hero-microcopy">Sem compromisso - diagnostico estrategico gratuito</p>
 
           <div className="hero-features">
             <div className="hero-feat-item">
               <Zap className="feat-icon" size={20} />
-              <span>Velocidade Máxima (Pagespeed 90+)</span>
+              <span>Pagina persuasiva com copy de conversao</span>
             </div>
             <div className="hero-feat-item">
               <Trophy className="feat-icon" size={20} />
-              <span>Design 100% Exclusivo</span>
+              <span>7 criativos prontos para anuncio</span>
             </div>
             <div className="hero-feat-item">
               <ShieldCheck className="feat-icon" size={20} />
-              <span>Copywriting Persuasivo</span>
+              <span>Gestao de trafego em Meta e Google Ads</span>
             </div>
           </div>
         </div>

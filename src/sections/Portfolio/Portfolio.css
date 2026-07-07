@@ -40,17 +40,137 @@
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
 }
 
-/* Grid de Projetos */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+/* Showcase em estilo hero-slider */
+.portfolio-showcase {
+  position: relative;
+  overflow: hidden;
 }
 
-.portfolio-card {
+.portfolio-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(15, 23, 42, 0.6);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 8;
+}
+
+.portfolio-nav-prev {
+  left: 18px;
+}
+
+.portfolio-nav-next {
+  right: 18px;
+}
+
+.portfolio-nav-btn:hover {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: #ffffff;
+}
+
+.portfolio-stage {
+  position: relative;
+  min-height: 500px;
+  width: 100%;
   overflow: hidden;
+}
+
+.portfolio-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(2, 6, 23, 0.72) 10%, rgba(2, 6, 23, 0.45) 48%, rgba(2, 6, 23, 0.2) 100%);
+  z-index: 1;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.portfolio-simulated-full {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.portfolio-stage-overlay {
+  position: relative;
+  z-index: 3;
+  max-width: 640px;
+  padding: 58px 52px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 500px;
+  text-align: left;
+}
+
+.portfolio-stage-title {
+  font-size: clamp(28px, 4.5vw, 54px);
+  line-height: 1.05;
+  color: #ffffff;
+  margin-bottom: 14px;
+  letter-spacing: -1.4px;
+}
+
+.portfolio-stage-desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.55;
+  max-width: 560px;
+  margin-bottom: 24px;
+}
+
+.portfolio-thumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.portfolio-thumb {
+  border: 1px solid var(--gray-200);
+  padding: 3px;
+  border-radius: 10px;
+  background: var(--bg-dark-card);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.portfolio-thumb.active {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-sm);
+}
+
+.portfolio-thumb-preview {
+  width: 76px;
+  height: 50px;
+  border-radius: 7px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.portfolio-thumb-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Preview Area */
@@ -65,17 +185,6 @@
   border-bottom: 1px solid rgba(124, 58, 237, 0.05);
 }
 
-.portfolio-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-
-.portfolio-card:hover .portfolio-image {
-  transform: scale(1.05);
-}
-
 /* Simulador de Navegador para Previews Fictícios */
 .portfolio-simulated-preview {
   position: relative;
@@ -88,17 +197,9 @@
   transition: color var(--transition-normal);
 }
 
-.portfolio-card:hover .portfolio-simulated-preview {
-  color: rgba(15, 23, 42, 0.3);
-}
-
 .simulated-icon {
   z-index: 2;
   transition: transform var(--transition-normal);
-}
-
-.portfolio-card:hover .simulated-icon {
-  transform: scale(1.1) rotate(5deg);
 }
 
 .simulated-browser-bar {
@@ -116,28 +217,6 @@
   border-radius: 50%;
 }
 
-/* Hover Overlay */
-.portfolio-hover-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity var(--transition-normal);
-  z-index: 5;
-}
-
-.portfolio-preview-wrapper:hover .portfolio-hover-overlay {
-  opacity: 1;
-}
-
 .portfolio-view-link {
   display: inline-flex;
   align-items: center;
@@ -150,12 +229,7 @@
   font-weight: 700;
   font-size: 14px;
   box-shadow: var(--shadow-md);
-  transform: translateY(15px);
   transition: all var(--transition-normal);
-}
-
-.portfolio-preview-wrapper:hover .portfolio-view-link {
-  transform: translateY(0);
 }
 
 .portfolio-view-link:hover {
@@ -164,42 +238,51 @@
   transform: scale(1.03);
 }
 
-/* Info Box */
-.portfolio-info {
-  padding: 24px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
 .portfolio-item-category {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--accent-purple);
-  margin-bottom: 8px;
+  color: #c7d2fe;
+  margin-bottom: 10px;
   letter-spacing: 0.5px;
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(165, 180, 252, 0.35);
+  border-radius: 999px;
+  padding: 6px 12px;
 }
 
-.portfolio-item-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-dark-primary);
-  margin-bottom: 8px;
-  line-height: 1.3;
+.portfolio-carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
 }
 
-.portfolio-item-desc {
-  font-size: 14px;
-  color: var(--text-dark-muted);
-  line-height: 1.5;
+.portfolio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  background: var(--gray-300);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.portfolio-dot.active {
+  width: 24px;
+  background: var(--secondary);
 }
 
 /* Responsivo */
 @media (max-width: 992px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .portfolio-stage {
+    min-height: 430px;
+  }
+
+  .portfolio-stage-overlay {
+    min-height: 430px;
+    padding: 36px 28px;
   }
 }
 
@@ -213,12 +296,50 @@
     font-size: 13px;
   }
   
-  .portfolio-grid {
-    grid-template-columns: 1fr;
+  .portfolio-stage {
+    min-height: 390px;
   }
-  
-  .portfolio-card {
-    max-width: 450px;
-    margin: 0 auto;
+
+  .portfolio-stage::after {
+    background: linear-gradient(180deg, rgba(2, 6, 23, 0.25) 0%, rgba(2, 6, 23, 0.72) 55%, rgba(2, 6, 23, 0.9) 100%);
+  }
+
+  .portfolio-stage-overlay {
+    min-height: 390px;
+    justify-content: flex-end;
+    padding: 22px 18px;
+  }
+
+  .portfolio-stage-title {
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+
+  .portfolio-stage-desc {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .portfolio-nav-btn {
+    width: 34px;
+    height: 34px;
+    top: 42%;
+  }
+
+  .portfolio-nav-prev {
+    left: 10px;
+  }
+
+  .portfolio-nav-next {
+    right: 10px;
+  }
+
+  .portfolio-thumbs {
+    gap: 8px;
+  }
+
+  .portfolio-thumb-preview {
+    width: 58px;
+    height: 40px;
   }
 }

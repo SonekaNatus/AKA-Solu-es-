@@ -1,5 +1,5 @@
 import React from "react";
-import { Zap, Layout, Target, Search, Smartphone, Share2 } from "lucide-react";
+import { MonitorSmartphone, Megaphone, BarChart3 } from "lucide-react";
 import "./Benefits.css";
 
 interface BenefitCard {
@@ -11,34 +11,19 @@ interface BenefitCard {
 export const Benefits: React.FC = () => {
   const benefitsData: BenefitCard[] = [
     {
-      icon: <Zap size={28} />,
-      title: "Velocidade Ultra Rápida",
-      description: "Carregamento em menos de 1 segundo. Evite perder clientes pela demora no carregamento da página.",
+      icon: <MonitorSmartphone size={28} />,
+      title: "Landing Page Persuasiva",
+      description: "Pagina pronta para rodar com estrutura de conversao, design responsivo e copy voltada para gerar leads e vendas.",
     },
     {
-      icon: <Layout size={28} />,
-      title: "Design Exclusivo e Autoral",
-      description: "Esqueça templates prontos e batidos. Criamos uma identidade visual única e focada na sua marca.",
+      icon: <Megaphone size={28} />,
+      title: "Criativos Para Anuncios",
+      description: "Criativos estrategicos para Meta e Google, pensados para chamar atencao e reduzir custo por lead.",
     },
     {
-      icon: <Target size={28} />,
-      title: "Arquitetura de Conversão",
-      description: "Copywriting persuasivo e posicionamento estratégico de CTAs para maximizar as suas vendas.",
-    },
-    {
-      icon: <Search size={28} />,
-      title: "SEO Otimizado de Fábrica",
-      description: "Código semântico de alta performance que ajuda seu site a alcançar as primeiras posições do Google.",
-    },
-    {
-      icon: <Smartphone size={28} />,
-      title: "100% Responsivo",
-      description: "Uma experiência de navegação impecável e fluida adaptada para smartphones, tablets e computadores.",
-    },
-    {
-      icon: <Share2 size={28} />,
-      title: "Fácil Integração",
-      description: "Instalação descomplicada de Pixels (Facebook, Google), Analytics, CRMs e formulários de e-mail.",
+      icon: <BarChart3 size={28} />,
+      title: "Gestao de Trafego Pago",
+      description: "Campanhas em Meta Ads e Google Ads com otimizacao continua para escalar seu resultado de forma previsivel.",
     },
   ];
 
@@ -46,13 +31,12 @@ export const Benefits: React.FC = () => {
     <section id="beneficios" className="section benefits-section">
       <div className="container-wide">
         <div className="section-header-center">
-          <span className="section-subtitle-badge">Por que nos escolher</span>
+          <span className="section-subtitle-badge">Entregaveis</span>
           <h2 className="section-title text-dark-primary">
-            Diferenciais que Alavancam <br />
-            <span className="text-gradient-purple">Seu Faturamento</span>
+            O que voce recebe no <span className="text-gradient-purple">combo completo</span>
           </h2>
           <p className="section-description">
-            Criamos muito mais do que sites bonitos. Entregamos verdadeiras máquinas de geração de leads e vendas.
+            Uma operacao completa para sair da ideia e entrar em campanha com velocidade, consistencia e foco total em conversao.
           </p>
         </div>
 

@@ -1,5 +1,6 @@
 import { Header } from "./components/Header/Header";
 import { Hero } from "./sections/Hero/Hero";
+import { Authority } from "./sections/Authority/Authority";
 import { Benefits } from "./sections/Benefits/Benefits";
 import { Portfolio } from "./sections/Portfolio/Portfolio";
 import { Process } from "./sections/Process/Process";
@@ -19,6 +20,9 @@ function App() {
       <main>
         {/* Seção de Entrada / Hero */}
         <Hero />
+
+        {/* Números de Autoridade */}
+        <Authority />
 
         {/* Diferenciais / Benefícios */}
         <Benefits />

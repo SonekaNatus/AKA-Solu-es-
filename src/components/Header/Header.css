@@ -3,14 +3,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 24px 20px;
+  padding: 10px 20px;
   background: transparent;
   transition: all var(--transition-normal);
   z-index: 100;
 }
 
 .header.scrolled {
-  padding: 14px 20px;
+  padding: 8px 20px;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -31,14 +31,14 @@
 }
 
 .logo-img {
-  height: 100px;
+  height: 54px;
   width: auto;
   display: block;
   transition: transform var(--transition-normal);
 }
 
 .logo-img-mobile {
-  height: 48px;
+  height: 34px;
   width: auto;
   display: block;
 }

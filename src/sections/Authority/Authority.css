@@ -1,0 +1,46 @@
+.authority-section {
+  padding: 0 24px 40px;
+  background: var(--bg-dark-deep);
+}
+
+.authority-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.authority-card {
+  padding: 22px 18px;
+  text-align: center;
+}
+
+.authority-value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 36px;
+  line-height: 1;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.authority-label {
+  font-size: 14px;
+  color: var(--text-dark-muted);
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .authority-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .authority-section {
+    padding: 0 16px 30px;
+  }
+
+  .authority-grid {
+    grid-template-columns: 1fr;
+  }
+}

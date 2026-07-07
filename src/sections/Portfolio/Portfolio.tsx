@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ExternalLink, Layers } from "lucide-react";
+import React, { useEffect, useMemo, useState } from "react";
+import { ChevronLeft, ChevronRight, ExternalLink, Layers } from "lucide-react";
 import "./Portfolio.css";
 
 // ==========================================================================
@@ -76,6 +76,8 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
 
 export const Portfolio: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>("todos");
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isAutoPlayPaused, setIsAutoPlayPaused] = useState(false);
 
   const filteredItems = activeFilter === "todos" 
     ? PORTFOLIO_ITEMS 
@@ -87,6 +89,36 @@ export const Portfolio: React.FC = () => {
     { value: "leads", label: "Captura de Leads" },
     { value: "saas", label: "SaaS & Apps" },
   ];
+
+  useEffect(() => {
+    setActiveSlide(0);
+  }, [activeFilter]);
+
+  const hasMultipleSlides = filteredItems.length > 1;
+  const currentItem = filteredItems[activeSlide];
+
+  useEffect(() => {
+    if (!hasMultipleSlides || isAutoPlayPaused) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveSlide((prev) => (prev === filteredItems.length - 1 ? 0 : prev + 1));
+    }, 4000);
+
+    return () => window.clearInterval(intervalId);
+  }, [filteredItems.length, hasMultipleSlides, isAutoPlayPaused]);
+
+  const goToPrev = () => {
+    setActiveSlide((prev) => (prev === 0 ? filteredItems.length - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setActiveSlide((prev) => (prev === filteredItems.length - 1 ? 0 : prev + 1));
+  };
+
+  const slideStyle = useMemo(
+    () => ({ background: currentItem?.imagePath ? "none" : currentItem?.color || "#111827" }),
+    [currentItem]
+  );
 
   return (
     <section id="portfolio" className="section portfolio-section">
@@ -115,30 +147,54 @@ export const Portfolio: React.FC = () => {
           ))}
         </div>
 
-        {/* Grid de Itens do Portfólio */}
-        <div className="portfolio-grid">
-          {filteredItems.map((item) => (
-            <div key={item.id} className="card portfolio-card">
-              <div 
-                className="portfolio-preview-wrapper"
-                style={{ background: item.imagePath ? "none" : item.color }}
+        <div
+          className="portfolio-showcase card"
+          onMouseEnter={() => setIsAutoPlayPaused(true)}
+          onMouseLeave={() => setIsAutoPlayPaused(false)}
+        >
+          {hasMultipleSlides && (
+            <>
+              <button
+                type="button"
+                className="portfolio-nav-btn portfolio-nav-prev"
+                onClick={goToPrev}
+                aria-label="Projeto anterior"
               >
-                {item.imagePath ? (
-                  <img src={item.imagePath} alt={item.title} className="portfolio-image" />
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                type="button"
+                className="portfolio-nav-btn portfolio-nav-next"
+                onClick={goToNext}
+                aria-label="Proximo projeto"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </>
+          )}
+
+          {currentItem && (
+            <>
+              <div className="portfolio-stage" style={slideStyle}>
+                {currentItem.imagePath ? (
+                  <img src={currentItem.imagePath} alt={currentItem.title} className="portfolio-image" />
                 ) : (
-                  <div className="portfolio-simulated-preview">
-                    <Layers className="simulated-icon" size={40} />
+                  <div className="portfolio-simulated-preview portfolio-simulated-full">
+                    <Layers className="simulated-icon" size={64} />
                     <div className="simulated-browser-bar">
                       <span></span><span></span><span></span>
                     </div>
                   </div>
                 )}
-                
-                <div className="portfolio-hover-overlay">
-                  <a 
-                    href={item.link} 
+
+                <div className="portfolio-stage-overlay">
+                  <span className="portfolio-item-category">{currentItem.categoryLabel}</span>
+                  <h3 className="portfolio-stage-title">{currentItem.title}</h3>
+                  <p className="portfolio-stage-desc">{currentItem.description}</p>
+                  <a
+                    href={currentItem.link}
                     className="portfolio-view-link"
-                    target={item.link.startsWith("http") ? "_blank" : "_self"}
+                    target={currentItem.link.startsWith("http") ? "_blank" : "_self"}
                     rel="noopener noreferrer"
                   >
                     <ExternalLink size={20} />
@@ -146,15 +202,48 @@ export const Portfolio: React.FC = () => {
                   </a>
                 </div>
               </div>
-
-              <div className="portfolio-info">
-                <span className="portfolio-item-category">{item.categoryLabel}</span>
-                <h3 className="portfolio-item-title">{item.title}</h3>
-                <p className="portfolio-item-desc">{item.description}</p>
-              </div>
-            </div>
-          ))}
+            </>
+          )}
         </div>
+
+        {hasMultipleSlides && (
+          <div className="portfolio-thumbs">
+            {filteredItems.map((item, index) => (
+              <button
+                key={item.id}
+                type="button"
+                className={`portfolio-thumb ${index === activeSlide ? "active" : ""}`}
+                onClick={() => setActiveSlide(index)}
+                aria-label={`Abrir projeto ${index + 1}`}
+              >
+                <div
+                  className="portfolio-thumb-preview"
+                  style={{ background: item.imagePath ? "none" : item.color }}
+                >
+                  {item.imagePath ? (
+                    <img src={item.imagePath} alt={item.title} className="portfolio-thumb-image" />
+                  ) : (
+                    <Layers size={18} />
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {hasMultipleSlides && (
+          <div className="portfolio-carousel-dots">
+            {filteredItems.map((item, index) => (
+              <button
+                key={`portfolio-dot-${item.id}`}
+                type="button"
+                className={`portfolio-dot ${index === activeSlide ? "active" : ""}`}
+                onClick={() => setActiveSlide(index)}
+                aria-label={`Ir para projeto ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

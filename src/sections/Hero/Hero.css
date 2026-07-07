@@ -46,18 +46,18 @@
 
 /* Título e Subtítulo */
 .hero-title {
-  font-size: 54px;
-  line-height: 1.15;
+  font-size: 58px;
+  line-height: 1.08;
   letter-spacing: -1.5px;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .hero-subtitle {
-  font-size: 18px;
+  font-size: 19px;
   color: var(--text-dark-muted);
-  line-height: 1.6;
-  max-width: 580px;
-  margin-bottom: 40px;
+  line-height: 1.5;
+  max-width: 640px;
+  margin-bottom: 30px;
 }
 
 /* Ações */
@@ -65,8 +65,15 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 14px;
   width: 100%;
+}
+
+.hero-microcopy {
+  font-size: 13px;
+  color: var(--text-dark-muted);
+  font-weight: 600;
+  margin-bottom: 36px;
 }
 
 /* Recursos */
@@ -74,16 +81,20 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 14px;
 }
 
 .hero-feat-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-dark-muted);
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark-primary);
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--gray-200);
+  background: var(--bg-dark-card);
 }
 
 .feat-icon {
@@ -235,7 +246,7 @@
 /* Responsivo */
 @media (max-width: 1024px) {
   .hero-title {
-    font-size: 42px;
+    font-size: 46px;
   }
 }
 
@@ -251,7 +262,7 @@
   
   .hero-subtitle {
     font-size: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
   
   .hero-container {
@@ -273,6 +284,10 @@
     flex-direction: column;
     width: 100%;
     gap: 12px;
+  }
+
+  .hero-microcopy {
+    margin-bottom: 24px;
   }
   
   .hero-features {
