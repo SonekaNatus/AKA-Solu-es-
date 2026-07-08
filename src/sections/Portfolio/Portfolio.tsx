@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, Layers } from "lucide-react";
 import emagreca from "../../assets/emagreca.png";
 import advocaciaSilva from "../../assets/advogaciaSilva.png";
+import tech from "../../assets/tech.png";
 import "./Portfolio.css";
 
 interface PortfolioItem {
@@ -22,19 +23,20 @@ interface PortfolioItem {
 
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
-    id: 1,
-    title: "Clínica Odontológica OdontoPremium",
-    category: "leads",
-    categoryLabel: "Captura de Leads",
-    description: "Landing page de agendamento para público de alta renda.",
-    problem: "Poucos agendamentos vindos do Google e dependência de indicações.",
-    solution: "Página focada em conversão com formulário e WhatsApp integrados.",
-    result: "Aumento consistente de agendamentos qualificados.",
-    metricBefore: "15 contatos/mês",
-    metricAfter: "48 contatos/mês",
-    color: "#4f46e5",
-    link: "#contato",
-  },
+  id: 1,
+  title: "Arco Tech",
+  category: "leads",
+  categoryLabel: "Website Institucional",
+  description: "Landing page moderna para uma empresa de tecnologia, destacando soluções digitais, serviços e formas de contato.",
+  problem: "A empresa precisava de um site profissional para apresentar seus serviços e fortalecer sua presença digital.",
+  solution: "Desenvolvimento de um site responsivo com design moderno, foco na experiência do usuário e seções para apresentação da empresa, serviços e contato.",
+  result: "Maior credibilidade da marca e uma plataforma preparada para atrair novos clientes.",
+  metricBefore: "Sem presença digital profissional",
+  metricAfter: "Site moderno e otimizado para conversão",
+  color: "#4f46e5",
+  imagePath: tech,
+  link: "https://arco-odontod-zeta.vercel.app/"
+},
 
  {
   id: 2,
