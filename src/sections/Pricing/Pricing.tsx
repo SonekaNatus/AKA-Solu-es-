@@ -23,8 +23,8 @@ export const Pricing: React.FC = () => {
   const plans: PricingPlan[] = [
     {
       name: "Essencial",
-      price: "R$ 997",
-      installments: "ou 12x de R$ 99,70",
+      price: "R$ 1.997",
+      installments: "ou 12x de R$ 149,70",
       description: "Ideal para validação rápida de produtos e serviços locais.",
       buttonText: "Iniciar Plano Essencial",
       buttonVariant: "outline",
@@ -44,8 +44,8 @@ export const Pricing: React.FC = () => {
     },
     {
       name: "Premium",
-      price: "R$ 1.597",
-      installments: "ou 12x de R$ 159,70",
+      price: "R$ 2.497",
+      installments: "ou 12x de R$ 249,70",
       description: "A solução completa para infoprodutos, lançamentos e campanhas de anúncios em escala.",
       buttonText: "Iniciar Plano Premium",
       buttonVariant: "primary",

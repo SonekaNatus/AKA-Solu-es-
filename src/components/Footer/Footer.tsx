@@ -2,7 +2,7 @@ import React from "react";
 import { Mail, MessageCircle, Share2, Globe } from "lucide-react";
 import "./Footer.css";
 
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "5511979722730";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();

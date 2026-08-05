@@ -53,21 +53,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
   imagePath: emagreca,
   link: "https://emagre-a-com-sa-de.vercel.app/"
 },
-
-  {
-    id: 3,
-    title: "SaaS Workspace",
-    category: "saas",
-    categoryLabel: "SaaS / Aplicativo",
-    description: "Apresentação de software com foco em teste gratuito.",
-    problem: "Visitantes não entendiam o valor do produto em poucos segundos.",
-    solution: "Landing com proposta clara, benefícios e prova social.",
-    result: "Mais cadastros para teste gratuito.",
-    metricBefore: "90 leads/mês",
-    metricAfter: "210 leads/mês",
-    color: "#06b6d4",
-    link: "#contato",
-  },
   {
   id: 4,
   title: "Advocacia Silva",
@@ -83,34 +68,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
   imagePath: advocaciaSilva,
   link: "https://advogacia-silva.vercel.app/"
 },
-  {
-    id: 5,
-    title: "Investidor de Sucesso",
-    category: "vendas",
-    categoryLabel: "Página de Vendas",
-    description: "Página de vendas para curso online com autoridade.",
-    problem: "Baixa confiança e abandono antes da compra.",
-    solution: "Estrutura com depoimentos, garantia e oferta clara.",
-    result: "Aumento de vendas no lançamento.",
-    metricBefore: "R$ 18k/mês",
-    metricAfter: "R$ 41k/mês",
-    color: "#b91c1c",
-    link: "#contato",
-  },
-  {
-    id: 6,
-    title: "FitLife App",
-    category: "saas",
-    categoryLabel: "SaaS / Aplicativo",
-    description: "Landing para download de app fitness.",
-    problem: "Poucos downloads vindos de campanhas pagas.",
-    solution: "Página mobile-first com foco em instalação rápida.",
-    result: "Mais downloads e menor custo por instalação.",
-    metricBefore: "R$ 6,20/instalação",
-    metricAfter: "R$ 2,90/instalação",
-    color: "#10b981",
-    link: "#contato",
-  },
 ];
 
 export const Portfolio: React.FC = () => {
@@ -127,7 +84,6 @@ export const Portfolio: React.FC = () => {
     { value: "todos", label: "Todos os Projetos" },
     { value: "vendas", label: "Páginas de Vendas" },
     { value: "leads", label: "Captura de Leads" },
-    { value: "saas", label: "SaaS & Apps" },
   ];
 
   useEffect(() => {

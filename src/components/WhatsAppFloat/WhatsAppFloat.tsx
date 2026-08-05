@@ -2,7 +2,7 @@ import React from "react";
 import { MessageCircle } from "lucide-react";
 import "./WhatsAppFloat.css";
 
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "5511979722730";
 const WHATSAPP_MESSAGE =
   "Olá! Vim pelo site da AKA Soluções e quero receber minha proposta para vender mais com Landing Page + Criativos + Tráfego.";
 

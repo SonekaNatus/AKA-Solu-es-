@@ -3,7 +3,7 @@ import { Mail, Send, CheckCircle, AlertTriangle, Clock, MessageCircle } from "lu
 import { Button } from "../../components/UI/Button";
 import "./Contact.css";
 
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "5511979722730";
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
